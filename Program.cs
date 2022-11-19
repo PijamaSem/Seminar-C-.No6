@@ -3,17 +3,20 @@
 Console.WriteLine("Dear User, pls intup your number, using (,) to separate digits ");
 string inputData=Convert.ToString(Console.ReadLine());
 
-CheckData(inputData);
+ if (CheckData(inputData)=true)
+    {
 
 
-void CheckData(string inputData)
+    }  
+
+bool CheckData(string inputData)
     {
     int size = inputData.Length;    //количество символов в строке
     //Console.WriteLine(size);      //проверка 
+    bool check= true;
     for (int i=0; i<size;i++)       //цикло проверки на корректность ввода
         {
         int digit=Convert.ToInt32(inputData[i]);
-        //bool check = true;
            if(digit==44 || digit==45 || ((digit>47) && (digit < 58)))
            {
            Console.WriteLine("Data corret");
@@ -21,10 +24,12 @@ void CheckData(string inputData)
            else
            {
             Console.WriteLine("Data incorret, pls try againe");
-            //bool check = true;
             i=size;
-           }
+            check = false;
+            }
         }
+        if (check=true) return true;
+        else return false;
     }
 int QuontityOfNums(string inputData)
     {
