@@ -101,7 +101,7 @@ void CrossCor(int k1,int b1,int k2,int b2)
 int [] Result = new int  [2];  
 if (k1==k2)
     {
-        Console.WriteLine("Linea is parallel");
+        Console.WriteLine("Lines is parallel");
     }
     else
     {
