@@ -3,10 +3,11 @@
 Console.WriteLine("Dear User, pls intup your number, using (,) to separate digits ");
 string inputData=Convert.ToString(Console.ReadLine());
 
- if (CheckData(inputData)=true)
+ if (CheckData(inputData)==true)
     {
-
-
+    Sum(StringToNum(inputData));
+    }else{
+    Console.WriteLine("Data incorret, pls try againe");
     }  
 
 bool CheckData(string inputData)
@@ -19,16 +20,16 @@ bool CheckData(string inputData)
         int digit=Convert.ToInt32(inputData[i]);
            if(digit==44 || digit==45 || ((digit>47) && (digit < 58)))
            {
-           Console.WriteLine("Data corret");
+           //Console.WriteLine("Data corret");
            }
            else
            {
-            Console.WriteLine("Data incorret, pls try againe");
+            //Console.WriteLine("Data incorret, pls try againe");
             i=size;
             check = false;
             }
         }
-        if (check=true) return true;
+        if (check==true) return true;
         else return false;
     }
 int QuontityOfNums(string inputData)
@@ -66,73 +67,15 @@ int [] StringToNum(string Data)
             }
     return number;    
     }
-// void ShowArray(int [] array)
-//     {
-//         for (int i=0; i<array.Length; i++)
-//         {
-//             Console.Write(array[i] + " ");
-//         }
-//         Console.WriteLine();
-//     }
-// Console.Write("Введите числа через запятую: ");
-// int[] numbers = StringToNum(Console.ReadLine());
-// PrintArray(numbers);
-// int sum = 0;
-// for (int i = 0; i < numbers.Length; i++)
-// {
-//     if (numbers[i] > 0)
-//     {
-//         sum++;
-//     }
-// }
-// Console.WriteLine();
-// Console.WriteLine($"количество значений больше 0 = {sum}");
-
-
-// int[] StringToNum(string input)
-// {
-//     int count = 1;
-//     for (int i = 0; i < input.Length; i++)
-//     {
-//         if (input[i] == ',')
-//         {
-//             count++;
-//         }
-//     }
-
-//     int[] numbers = new int [count];
-//     int index = 0;
-
-//     for (int i = 0; i < input.Length; i++)
-//     {
-//         string temp = "";
-
-//         while (input [i] != ',')
-//         {
-//         if(i != input.Length - 1)
-//         {
-//             temp += input [i].ToString();
-//             i++;
-//         }
-//         else
-//         {
-//             temp += input [i].ToString();
-//             break;
-//         }
-//         }
-//         numbers[index] = Convert.ToInt32(temp);
-//         index++;
-//     }
-//     return numbers;
-// }
-
-
-// void PrintArray(int[] array)
-// {
-//     Console.Write("[ ");
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         Console.Write(array[i] + " ");
-//     }
-//     Console.Write("]");
-// }
+void Sum (int [] array)
+    {
+    int sum= 0;
+    for(int i=0; i<array.Length; i++)
+        {
+            if(array[i]>0)
+            {
+                sum+=array[i];
+            }    
+        }
+    Console.WriteLine($"Сумма положительных чисел {sum}");    
+    }
