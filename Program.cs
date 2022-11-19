@@ -1,5 +1,5 @@
 ﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-
+/*
 Console.WriteLine("Dear User, pls intup your number, using (,) to separate digits ");
 string inputData=Convert.ToString(Console.ReadLine());
 
@@ -77,5 +77,36 @@ void Sum (int [] array)
                 sum+=array[i];
             }    
         }
-    Console.WriteLine($"Сумма положительных чисел {sum}");    
+    Console.WriteLine($"Sun of positive numbers {sum}");    
     }
+    */
+
+    //Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+    //заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+    //y = k1 * x + b1, y = k2 * x + b2
+
+Console.WriteLine(" Ill try to find cross point of two lines. y = k1 * x + b1 and  y = k2 * x + b2");
+    Console.WriteLine("Pls input k1");
+    int k1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Pls input b1");
+    int b1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Pls input k2");
+    int k2 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Pls input b2");
+    int b2 = Convert.ToInt32(Console.ReadLine());
+    CrossCor(k1,b1,k2,b2);
+
+void CrossCor(int k1,int b1,int k2,int b2)
+{
+int [] Result = new int  [2];  
+if (k1==k2)
+    {
+        Console.WriteLine("Linea is parallel");
+    }
+    else
+    {
+        Result[0]=(b2-b1)/(k2-k1);
+        Result[1]=k1*Result[0]+b1;
+        Console.WriteLine($"Coordinate of cross ({Result[0]},{Result[1]})");
+    }    
+}
